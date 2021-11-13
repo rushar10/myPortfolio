@@ -19,7 +19,6 @@ function animate() {
   const projectTile = document.querySelectorAll(".project-tile");
   const content = document.querySelectorAll('.message');
   const typing = document.querySelector(".bottom div div");
-  console.log(typing);
   projectTile.forEach( (tile) => {
     let contentTop = tile.getBoundingClientRect().top;
     let webPosition = window.innerHeight;
@@ -32,6 +31,7 @@ function animate() {
   content.forEach(item => {
     let contentTop = item.getBoundingClientRect().top;
     let windowHeight = window.innerHeight;
+    console.lof(content);
     if (contentTop < windowHeight) {
       item.classList.add("up");
       typing.classList.add("up");
