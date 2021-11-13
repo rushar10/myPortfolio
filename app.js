@@ -35,15 +35,14 @@ function animate() {
     if (contentTop < windowHeight) {
       item.classList.add("up");
       typing.classList.add("up");
-      setTimeout(function () {
-        content.forEach(up => {
-          if (up.classList.contains("message1")) {
+         newItem.forEach(up => {
+        if (up.classList.contains("message1")) {
+           setTimeout(function () {
             up.style.transition = "transform 500ms linear";
             up.style.transform = "translateY(0)";
-           
-          }   
+            }, 7000);
+        }   
         })
-      }, 7000);
     } else {
       item.classList.remove("up");
       typing.classList.remove("up");
