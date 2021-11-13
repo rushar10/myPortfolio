@@ -42,9 +42,6 @@ function animate() {
             }, 7000);
         }   
         })
-    } else {
-      item.classList.remove("up");
-      typing.classList.remove("up");
     }
     })
     
