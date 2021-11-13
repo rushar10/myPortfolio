@@ -17,6 +17,9 @@ function hideBar() {
 
 function animate() {
   const projectTile = document.querySelectorAll(".project-tile");
+  const content = document.querySelectorAll('.message');
+  const typing = document.querySelector(".bottom div div");
+  console.log(typing);
   projectTile.forEach( (tile) => {
     let contentTop = tile.getBoundingClientRect().top;
     let webPosition = window.innerHeight;
@@ -26,5 +29,24 @@ function animate() {
       tile.classList.remove("fade-in");
     }
   })
-  
+  content.forEach(item => {
+    let contentTop = item.getBoundingClientRect().top;
+    let windowHeight = window.innerHeight;
+    if (contentTop < windowHeight) {
+      item.classList.add("up");
+      typing.classList.add("up");
+      setTimeout(function () {
+        content.forEach(up => {
+          if (up.classList.contains("message1")) {
+            up.style.transition = "transform 500ms linear";
+            up.style.transform = "translateY(0)";
+           
+          }   
+        })
+      }, 7000);
+    } else {
+      item.classList.remove("up");
+    }
+    })
+    
 }
