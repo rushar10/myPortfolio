@@ -35,7 +35,7 @@ function animate() {
     if (contentTop < windowHeight) {
       item.classList.add("up");
       typing.classList.add("up");
-         newItem.forEach(up => {
+         content.forEach(up => {
         if (up.classList.contains("message1")) {
            setTimeout(function () {
             up.style.transition = "transform 500ms linear";
