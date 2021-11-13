@@ -256,16 +256,153 @@ h1 > span {
 
 #profile-section {
   width: 100%;
-  height: 300px;
+  height: 400px;
   padding: 3em 0;
   display: flex;
+  position: relative;
   flex-direction: column;
 }
-
+#profile-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--clr-background);
+  opacity: .5;
+  z-index: -5;
+}
 #profile-section > h2 {
   font-size: 1.75rem;
   text-align: center;
   flex: 0.2;
+}
+.mobile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 10px solid #1f1e1c;
+    border-top: none;
+    width: 290px;
+    height: 200px;
+    border-radius: 0 0 10px 10px;  
+    background: #272723;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    color: white;
+    z-index: -10;
+}
+#message-box {
+   overflow: hidden; 
+}
+.messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    height: 30px;
+    background: linear-gradient(to left,#fe5b78, #3b76ff);
+    width: 6.5ch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 5px;
+    transform: translateY(90px);
+    will-change: transform;
+}
+
+.message1 {
+    transition: transform 500ms linear 4s;
+    align-self: flex-end;
+    border-radius: 20px 10px 0 20px;
+}
+
+.message2 {
+    transition: transform 500ms linear 7s;
+    border-radius: 10px 20px 20px 0;
+}
+.message1.up {
+    transform: translateY(50px);
+}
+.message2.up {
+    transform: translateY(0);
+}
+.mobile .bottom {
+    background: #1f1e1c;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 0.5em;
+    
+}
+.mobile .bottom > div {
+    flex: 0.8;
+    background: #272723;
+    padding: 0.5rem;
+    border-radius: 50px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.mobile > .bottom  > div > div {
+    width: 0ch;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    overflow: hidden;
+    border-right: 1px solid;
+}
+.mobile > .bottom  > div > div.up {
+  animation: typing 3s ease-in-out 1s 2;
+}
+.mobile .bottom i {
+    color: aqua;
+    font-size: 32px;
+    text-align: center;
+    flex: 0.2;
+}
+
+@keyframes typing {
+    0% {
+        width: 0ch;
+         border-right: none;
+    } 10% {
+        width: 0ch;
+        border-right: 1px solid;
+    } 20% {
+        width: 1.6ch;
+        border-right: none;
+    } 30% {
+        width: 1.6ch;
+        border-right: 1px solid;
+     } 40% {
+        width: 2.7ch;
+        border-right: none;
+    } 50% {
+        width: 2.7ch;
+        border-right: 1px solid;
+    } 60% {
+        width: 3.2ch;
+        border-right: none;
+    } 70% {
+        width: 3.2ch;
+        border-right: 1px solid;
+    } 80% {
+        width: 3.7ch;
+        border-right: none;
+    } 90% {
+        width: 3.7ch;
+        border-right: 1px solid;
+    }100% {
+        width: 4.7ch;
+        border-right: none;
+    }
 }
 
 .profiles {
