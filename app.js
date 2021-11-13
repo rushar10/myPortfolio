@@ -31,7 +31,7 @@ function animate() {
   content.forEach(item => {
     let contentTop = item.getBoundingClientRect().top;
     let windowHeight = window.innerHeight;
-    console.lof(content);
+    console.log(content);
     if (contentTop < windowHeight) {
       item.classList.add("up");
       typing.classList.add("up");
